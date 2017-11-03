@@ -131,20 +131,5 @@ public class StudentController
 //    	studentDAO.updateStudent(new StudentModel(npm, name, gpa));
 //        return "success-update";
 //    }
-    
-    @RequestMapping("/course/view/{id_course}")
-    public String viewCourse (Model model,
-            @PathVariable(value = "id_course") String id_course)
-    {
-        CourseModel course = studentDAO.selectCourse (id_course);
-
-        if (course != null) {
-            model.addAttribute ("course", course);
-            return "viewCourse";
-        } else {
-            model.addAttribute ("course", course);
-            return "CourseNotFound";
-        }
-    }
 
 }
